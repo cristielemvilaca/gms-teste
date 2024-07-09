@@ -53,7 +53,7 @@ describe('Us-012-Funcionalidade: Cadastro de membros', () => {
 
   });
 
-  it.only('Deve validar mensagem de erro email já cadastro',() => {
+  it('Deve validar mensagem de erro email já cadastro',() => {
     cy.preencherCadastro( 'Cris' , 'Vilaca', 'cris1720484759903@teste.com' , '369887452155', 'Teste@2024' )
     cy.get('#signup-response').should('contain', 'Este email já está cadastrado')
 
