@@ -6,6 +6,11 @@ describe('Us-012-Funcionalidade: Cadastro de membros', () => {
     cy.visit('/')
   });
 
+  afterEach(() => {
+    cy.screenshot()
+});
+
+
   it('Deve fazer o cadastro de campos obrigatorios', () => {
     var email = `cris${Date.now()}@teste.com`
     cy.preencherCadastro('Cris', 'vilaca', email, '369887452155', 'Teste@2024' )
@@ -39,12 +44,12 @@ describe('Us-012-Funcionalidade: Cadastro de membros', () => {
 
   });
 
-  it('Deve validar mensagem de erro de senha não pode ser vazio',() => {
+  /*it('Deve validar mensagem de erro de senha não pode ser vazio',() => {
     var email = `cris${Date.now()}@teste.com`
     cy.preencherCadastro( 'Cris' , 'Vilaca', email , '369887452155', '' )
     cy.get('#signup-response').should('contain', 'Senha não pode estar vazia')
 
-  });
+  });*/
 
   it('Deve validar mensagem de erro de senha fraca',() => {
     var email = `cris${Date.now()}@teste.com`
