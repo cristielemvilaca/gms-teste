@@ -1,6 +1,6 @@
 ///<reference types="cypress"/>
 
-describe('US-00 : funcionalidade: Busca de filmes', () => {
+describe('US-001 : funcionalidade: Busca de filmes', () => {
     beforeEach(() =>{
         cy.visit('/')
     });
@@ -9,6 +9,12 @@ describe('US-00 : funcionalidade: Busca de filmes', () => {
         cy.get('#search-input').type('Matrix')
         cy.get('#search-button').click()
         cy.get('#results-section').should('contain', 'Matrix')
+    });
+
+    it('Deve buscar filme inexistente', () => {
+        cy.get('#search-input').type('Bat85n')
+        cy.get('#search-button').click()
+        cy.get('#results-section').should('contain', 'Filme não encontrado.')
     });
 
     it('Deve buscar filmes com sucesso de uma lista', () => {
