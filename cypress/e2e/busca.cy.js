@@ -12,7 +12,7 @@ describe('US-001 : funcionalidade: Busca de filmes', () => {
     it('Deve buscar filmes com sucesso', () => {
         cy.get('#search-input').type('Matrix')
         cy.get('#search-button').click()
-        cy.get('#results-section').should('contain', 'Matrix')
+        cy.get('#results-section').should('contain', 'Matrixxxxx')
     });
 
     it('Deve buscar filme inexistente', () => {
